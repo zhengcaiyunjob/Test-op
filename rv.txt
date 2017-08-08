@@ -1,0 +1,42 @@
+zhengcaiyundeMacBook-Pro% git ls-tree -l localone
+100755 blob fd029849a1447909806c73e860f1d2229758f403      17    .gitignore
+040000 tree ef62a3319df7af3794efb313c673a33e705d4318       -    .idea
+100644 blob 6baf3dd9220eddda0eeac88b638208695db43e5c       3    11.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391       0    2.txt
+100644 blob e3b2e218cf2418120cd36c2d8e26a604d6d12869     334    README.md
+040000 tree 84c06c4daa2e62eb21d779bd82b26d30f0765c76       -    a
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391       0    d.txt
+100644 blob 019fb23c413fedb8df87ee0562667bdcc5ab9464       8    localone.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391       0    master.txt
+100644 blob edbec11f03769bc9fe25c053af2ef7e6611f238e      84    readme.txt
+100755 blob 5d821c705726c22c1b97b6b9d797e0ca55a768cc      14    readme3.txt
+100755 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391       0    rv.txt
+040000 tree 821792f1fdd03cb417fbd425fa2d66e33e70f2fe       -    two
+zhengcaiyundeMacBook-Pro% echo 'first commit' | git commit-tree 821792f1fdd03cb417fbd425fa2d66e33e70f2fe
+42c76774e3bd5c41f125fff613a75c28fe05fa3e
+zhengcaiyundeMacBook-Pro% echo 'second commit' | git commit-tree 821792f -p 42c76774e3bd5c41f125fff613a75c28fe05fa3e
+65a00897bada8a29cc6fd359855d9d4d8f659c0a
+zhengcaiyundeMacBook-Pro% echo 'third commit' | git commit-tree 821792f -p 65a00897bada8a29cc6fd359855d9d4d8f659c0a
+743878b33a0d52fb5a2132304c885b794b78b1df
+zhengcaiyundeMacBook-Pro% echo 'forth commit' | git commit-tree 82179f -p 743878b33a0d52fb5a2132304c885b794b78b1df
+fatal: Not a valid object name 82179f
+zhengcaiyundeMacBook-Pro% echo 'forth commit' | git commit-tree 821792f -p 743878b33a0d52fb5a2132304c885b794b78b1df
+9cb986e9cc206274804cd1942cef4647f2e1d707
+zhengcaiyundeMacBook-Pro% git log --stat 743878b33a0d52fb5a2132304c885b794b78b1df
+commit 743878b33a0d52fb5a2132304c885b794b78b1df
+Author: zhengcaiyun <zhengcaiyun@meituan.com>
+Date:   Tue Aug 8 13:29:41 2017 +0800
+
+    third commit
+
+commit 65a00897bada8a29cc6fd359855d9d4d8f659c0a
+Author: zhengcaiyun <zhengcaiyun@meituan.com>
+Date:   Tue Aug 8 13:28:57 2017 +0800
+
+    second commit
+
+commit 42c76774e3bd5c41f125fff613a75c28fe05fa3e
+Author: zhengcaiyun <zhengcaiyun@meituan.com>
+Date:   Tue Aug 8 13:27:47 2017 +0800
+
+:
