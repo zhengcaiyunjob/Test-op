@@ -42,7 +42,15 @@
 
 ​	Rap系统目前是阿里旗下的一个用于前端数据调试的mock系统，所有的接口按照团队和项目进行划分，有效隔离接口和接口之间的影响，同时定义和测试分离，方便用户的查阅。
 
-所有的数据类型囊括![](https://ws2.sinaimg.cn/large/006tNc79ly1fjuo9awrnmj307w0aswf1.jpg)
+​	所有的数据类型囊括 number, string, object, boolean, array<number>, array<string>, array<object>, array<boolean>, array等类型，只要每一个数据对应上述几种类型，接口的规范即可保证。
+
+## 3，easy-mock
+
+​	大搜车的easy-mock系统比较简单易用，但是有一个问题，在设置接口的时候，参数的设置并不是很友好，只能设置参数的值，没有参数类型的选择。这个地方可以稍微改进一下，在接口设置的时候直接给出一个参数列表，参考rap的比较好。
+
+### 4，JSONmock
+
+由于该种方式下json数据保留在本地，暂时不尝试这种方式；
 
 ​
 
